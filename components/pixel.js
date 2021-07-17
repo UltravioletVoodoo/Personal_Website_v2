@@ -1,26 +1,22 @@
-import { useEffect } from "react";
-
 export default function Pixel(props) {
-    const { color, position, flip, } = props;
+    const { color, position, scale, flip, } = props;
     const { x, y } = position;
-    const width     = 50;
-    const height    = 50;
 
     function animateThenFlip() {
-        flip();
+        flip(x, y);
     }
 
     return (
         <>
-            <div className='pixel' onClick={animateThenFlip}>pixel</div>
+            <div className='pixel' onClick={animateThenFlip}></div>
             <style jsx>{`
                 .pixel {
                     position: fixed;
-                    left: ${x}px;
-                    top: ${y}px;
+                    left: ${(x)*scale}px;
+                    top: ${(y)*scale}px;
                     border: 1px solid black;
-                    width: ${width}px;
-                    height: ${height}px;
+                    width: ${scale}px;
+                    height: ${scale}px;
                     background-color: ${color};
                 }
             `}</style>
