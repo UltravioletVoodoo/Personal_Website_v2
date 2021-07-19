@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import Pixel from '../components/pixel';
 
 export default function Home() {
-  const frontColor = 'darkgray';
-  const backColor = 'lightgray';
+  const frontColor = 'black';
+  const backColor = 'green';
   const pixelScale = 50;
   const gridWidth = 5;
   const gridHeight = 5;
@@ -44,8 +44,6 @@ export default function Home() {
   for (let y = 0; y < gridHeight; y++) {
     pixelGrid.push(generatePixelRow(y));
   }
-
-  console.log(pixels)
 
   return (
     <>
