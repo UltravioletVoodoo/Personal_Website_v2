@@ -5,8 +5,8 @@ export default function Home() {
   const frontColor = 'black';
   const backColor = 'green';
   const pixelScale = 50;
-  const gridWidth = 5;
-  const gridHeight = 5;
+  const gridWidth = 15;
+  const gridHeight = 15;
   const [ pixels, setPixels ] = useState(generateBasePixels());
   
   function generateBasePixels() {

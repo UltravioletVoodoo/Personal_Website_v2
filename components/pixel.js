@@ -6,10 +6,6 @@ export default function Pixel(props) {
     const [pixelClasses, setPixelClasses] = useState('pixel')
     const pixelRef = useRef(null);
 
-    function animateThenFlip() {
-        flip(x, y);
-    }
-
     function firstHalfFlip() {
         setPixelClasses('pixel flipped');
     }
@@ -24,8 +20,7 @@ export default function Pixel(props) {
             <div 
                 ref={pixelRef}
                 className={pixelClasses}
-                onClick={animateThenFlip}
-                onMouseOver={firstHalfFlip}
+                onClick={firstHalfFlip}
                 onTransitionEnd={secondHalfFlip}
                 >
             </div>
